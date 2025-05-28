@@ -37,10 +37,10 @@ class DafiText extends StatelessWidget {
 
 class DafiTextH1 extends DafiText {
   const DafiTextH1({super.key, required super.text, super.color})
-      : super(fontSize: 34);
+      : super(fontSize: 34, bold: true);
 }
 
 class DafiTextH2 extends DafiText {
   const DafiTextH2({super.key, required super.text, super.color})
-      : super(fontSize: 48);
+      : super(fontSize: 48, bold: true);
 }
