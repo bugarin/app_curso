@@ -17,5 +17,5 @@ class DafiColors {
   static const Color gray2 = Color(0xFF4F4F4F);
   static const Color gray3 = Color(0xFF828282);
   static const Color gray4 = Color(0xFFBDBDBD);
-  static const Color gray5 = Color(0xFFE0E0E0);
+  static const Color gray5 = Color(0xFFEBF0F0);
 }

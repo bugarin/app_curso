@@ -14,6 +14,31 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List<Widget> opcionesUsuario = [];
+
+    Function listItem = (String text, IconData icon) {
+      return Container(
+        padding: EdgeInsets.symmetric(vertical: 14, horizontal: 4),
+        child: Row(
+          children: [
+            Icon(icon, size: 22),
+            SizedBox(width: 13),
+            Expanded(
+              child: DafiText(
+                  text: text,
+                  fontSize: 16,
+                  bold: true,
+                  color: DafiColors.black1),
+            ),
+            Icon(Icons.arrow_forward_ios, size: 12),
+          ],
+        ),
+      );
+    };
+
+    opcionesUsuario.add(listItem('Información personal', Icons.person));
+    opcionesUsuario.add(listItem('Información laboral', Icons.work));
+
     DafiSize dafiSize = DafiSize(context);
     return MaterialApp(
       home: Scaffold(
@@ -64,6 +89,18 @@ class MainApp extends StatelessWidget {
                     child: volver(context),
                   ),
                 ],
+              ),
+              Container(
+                width: dafiSize.getWidth(342),
+                margin: EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+                padding: EdgeInsets.symmetric(vertical: 8, horizontal: 20),
+                decoration: BoxDecoration(
+                  color: DafiColors.gray5,
+                  borderRadius: BorderRadius.circular(6),
+                ),
+                child: Column(
+                  children: opcionesUsuario,
+                ),
               ),
               // SizedBox(height: 100),
               // getH1('Cabecero 01'),
