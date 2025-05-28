@@ -29,22 +29,33 @@ class MainApp extends StatelessWidget {
                   Center(
                     child: Padding(
                       padding: const EdgeInsets.only(top: 32),
-                      child: Icon(Icons.account_balance,
-                          color: DafiColors.primary,
-                          size: dafiSize.getPixel(142)),
+                      child: Icon(
+                        Icons.account_balance,
+                        color: DafiColors.primary,
+                        size: dafiSize.getPixel(142),
+                        shadows: [
+                          BoxShadow(
+                              color: Colors.white,
+                              blurRadius: 20,
+                              offset: Offset(0.0, 0.0),
+                              spreadRadius: 0,
+                              blurStyle: BlurStyle.solid)
+                        ],
+                      ),
                     ),
                   ),
                   Column(
                     children: [
                       SizedBox(height: dafiSize.getPixel(178)),
                       Container(
-                        width: dafiSize.getWidth(143),
+                        width: dafiSize.getWidth(343),
                         height: dafiSize.getHeight(62),
+                        margin: EdgeInsets.symmetric(horizontal: 24),
                         decoration: BoxDecoration(
                           color: DafiColors.white,
                           borderRadius: BorderRadius.circular(6),
                         ),
-                        child: DafiTextH1(text: 'RUBROS'),
+                        child: Center(child: DafiTextH1(text: 'RUBROS')),
                       ),
                     ],
                   ),
