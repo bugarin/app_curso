@@ -6,6 +6,7 @@ class DafiButton extends StatelessWidget {
   final Color color;
   final double fontSize;
   final IconData icon;
+  final VoidCallback onPressed;
 
   const DafiButton({
     super.key,
@@ -13,21 +14,25 @@ class DafiButton extends StatelessWidget {
     required this.color,
     this.fontSize = 12,
     this.icon = Icons.add,
+    required this.onPressed,
   });
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: () {},
+      onPressed: onPressed,
+      style: ElevatedButton.styleFrom(
+        backgroundColor: color,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(2)),
+      ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Icon(icon, color: Colors.white),
           SizedBox(width: 10),
-          DafiText(text: 'Botón 01', fontSize: 16, color: Colors.white),
+          DafiText(text: text, fontSize: 16, color: Colors.white),
         ],
       ),
-      style: ElevatedButton.styleFrom(backgroundColor: color),
     );
   }
 }
